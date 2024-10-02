@@ -4,24 +4,24 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        int n,q,sum=0;
+        int n,q;
         cin>>n>>q;
         int arr[n];
         for(int i=0;i<n;i++){
             int ele;
             cin>>ele;
             arr[i]=ele;
-            sum+=ele;
         }
         while(q--){
-            int temp=sum;
+            
+            int sum=0;
             int l,r,k;
             cin>>l>>r>>k;
-            for(int i=l-1;i<r;i++){
-                temp-=arr[i];
+            for(int i=0;i<n;i++){
+                if(i>=l-1 && i<r)sum+=k;
+                else sum+=arr[i];
             }
-            temp+=(k*(r-l+1));
-            if(temp%2!=0)cout<<"YES"<<endl;
+            if(sum%2!=0)cout<<"YES"<<endl;
             else cout<<"NO"<<endl;
         }
     }
