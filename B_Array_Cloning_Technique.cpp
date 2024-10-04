@@ -41,3 +41,46 @@ int main(){
         }
     }
 }
+/* WITHOUT TLE{ uses same mapping but different approach for counting no. of operations }
+
+{ We will use a greedy technique. Let's find the most common element in the array. Let it be x
+ and let it occur k
+ times in the array. Then let's make a copy where all elements are x
+. To do that we can make a copy of the given array and put all x
+ in one array. Now we will repeat the algorithm for the new array until we get a copy with n
+ numbers x
+. }
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int T;
+    cin >> T;
+    while (T --> 0) {
+        int n;
+        cin >> n;
+        map<int, int> q;
+        for (int i = 0; i < n; ++i) {
+            int x;
+            cin >> x;
+            ++q[x];
+        }
+        int am = 0;
+        for (auto &[x, y] : q) {
+            am = max(am, y);
+        }
+        int ans = 0;
+        while (am < n) {
+            int d = min(n - am, am);
+            ans += 1 + d;
+            am += d;
+        }
+        cout << ans << '\n';
+    }
+    return 0;
+}
+*/
