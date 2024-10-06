@@ -23,3 +23,8 @@ int main(){
         }
     }
 }
+/*
+First we calculate no. of even and odd no.
+if all ele are even then sum will always be even(cant assign odd)
+if all elements are odd and no. of elements are even then not possible
+*/
