@@ -13,7 +13,7 @@ int main(){
             trades+=((total_sticks-1)/sticks);
         }
         else{
-            trades+=(total_sticks/sticks)+1;
+            trades+=((total_sticks-1)/sticks)+1;
         }
         cout<<trades<<endl;
     }
